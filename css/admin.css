@@ -1,0 +1,152 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Yönetim paneli için biraz daha açık bir gri */
+    color: #333;
+}
+
+/* Genel Konteyner Stili (Panel için kullanılabilir) */
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Buton Stilleri (Giriş ve Panelde ortak olabilir) */
+button {
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease; /* Hover efekti için geçiş */
+}
+
+button.primary {
+    background-color: #007bff; /* Mavi ana buton */
+}
+button.primary:hover {
+    background-color: #0056b3;
+}
+
+button.success {
+    background-color: #5cb85c; /* Yeşil başarı/giriş butonu */
+}
+button.success:hover {
+    background-color: #4cae4c;
+}
+
+button.danger {
+    background-color: #d9534f; /* Kırmızı tehlike/silme/çıkış butonu */
+}
+button.danger:hover {
+    background-color: #c9302c;
+}
+
+
+/* Form Grupları (Giriş ve Panelde ortak olabilir) */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Tablo Stilleri (Panel için) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2; /* Tablo başlığı arka planı */
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f5f5f5; /* Satır üzerine gelince hafif renk değişimi */
+}
+
+/* Hata Mesajları */
+.error-message {
+     display: none; /* Varsayılan olarak gizli */
+     color: #d9534f;
+     background-color: #f8d7da;
+     border: 1px solid #f5c6cb;
+     padding: 10px;
+     border-radius: 4px;
+     margin-top: 10px;
+     font-size: 0.9em;
+}
+
+/* Başarı Mesajları */
+.success-message {
+    display: none; /* Varsayılan olarak gizli */
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+/* Yükleniyor Göstergesi (Panel için) */
+.loading-indicator {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+    color: #666;
+}
+
+/* Takvim Stilleri (Eklenecek kütüphaneye göre özelleştirilebilir) */
+#calendar {
+    margin-top: 30px;
+}
+
+/* Panel Başlığı ve Çıkış Butonu */
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.panel-header h1 {
+    margin: 0;
+}

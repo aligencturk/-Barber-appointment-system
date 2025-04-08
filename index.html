@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berber Randevu Sistemi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Sayfa yüklenirken formu gizle */
+        #randevuForm {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Padding'in genişliği etkilememesi için */
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff; /* Kurumsal mavi */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #hizliRandevuBtn {
+            display: block; /* Butonun tek başına bir satır kaplaması için */
+            margin: 20px auto; /* Ortalamak için */
+        }
+        #successMessage, #errorMessage {
+            display: none;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        #successMessage {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        #errorMessage {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Hoş Geldiniz!</h1>
+        <p>Kolayca randevunuzu alın.</p>
+    </header>
+
+    <main>
+        <button id="hizliRandevuBtn">Hızlı Randevu Al</button>
+
+        <form id="randevuForm">
+            <h2>Randevu Bilgileri</h2>
+            <div class="form-group">
+                <label for="ad">Adınız:</label>
+                <input type="text" id="ad" name="ad" required>
+            </div>
+            <div class="form-group">
+                <label for="telefon">Telefon Numaranız:</label>
+                <input type="tel" id="telefon" name="telefon" required>
+            </div>
+            <div class="form-group">
+                <label for="hizmet">Hizmet Türü:</label>
+                <select id="hizmet" name="hizmet" required>
+                    <option value="">Seçiniz...</option>
+                    <option value="sac_kesim">Saç Kesim</option>
+                    <option value="sakal_tras">Sakal Traşı</option>
+                    <option value="sac_sakal">Saç + Sakal</option>
+                    <option value="yikama_fon">Yıkama + Fön</option>
+                    <!-- İhtiyaca göre daha fazla hizmet eklenebilir -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tarih">Tarih:</label>
+                <input type="date" id="tarih" name="tarih" required>
+            </div>
+            <div class="form-group">
+                <label for="saat">Saat:</label>
+                <select id="saat" name="saat" required disabled>
+                    <option value="">Önce tarih seçiniz...</option>
+                    <!-- Saatler JavaScript ile doldurulacak -->
+                </select>
+            </div>
+            <button type="submit">Randevu Oluştur</button>
+            <div id="successMessage">Randevunuz başarıyla oluşturuldu!</div>
+            <div id="errorMessage">Randevu oluşturulurken bir hata oluştu. Lütfen tekrar deneyin.</div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Berber Randevu Sistemi</p>
+    </footer>
+
+    <!-- Firebase App (çekirdek) SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <!-- Firebase Firestore SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+
+    <!-- Firebase yapılandırma dosyamız -->
+    <script src="js/config.js"></script>
+
+    <!-- Uygulama mantığımız -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>

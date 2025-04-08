@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berber Yönetim Paneli - Giriş</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <style>
+        /* Genel admin stilleri admin.css'e taşınacak,
+           ancak bu sayfaya özel bazı temel stiller burada kalabilir. */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+        #loginFormContainer {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c; /* Yeşil giriş butonu */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        #loginError {
+            display: none;
+            margin-top: 15px;
+            color: #d9534f; /* Kırmızı hata mesajı */
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div id="loginFormContainer">
+        <h1>Yönetici Girişi</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">E-posta:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Giriş Yap</button>
+            <div id="loginError">Geçersiz e-posta veya şifre.</div>
+        </form>
+    </div>
+
+    <!-- Firebase App (çekirdek) SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <!-- Firebase Authentication SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+
+    <!-- Firebase yapılandırma dosyamız -->
+    <script src="js/config.js"></script>
+
+    <!-- Giriş mantığımız -->
+    <script src="js/auth.js"></script>
+</body>
+</html>

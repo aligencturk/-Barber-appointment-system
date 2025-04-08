@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berber Yönetim Paneli</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <!-- Takvim kütüphanesi için CSS (FullCalendar örneği) -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet' />
+    <style>
+        /* Panele özel ek stiller buraya eklenebilir */
+        #gunlukRandevularContainer, #takvimContainer {
+            margin-bottom: 30px;
+        }
+        #randevuListesi td, #randevuListesi th {
+             white-space: nowrap; /* Tablo hücrelerinin içeriğinin alt satıra kaymasını engelle */
+        }
+        .fc .fc-daygrid-day-number { /* Takvimdeki gün numaraları için */
+            text-decoration: none;
+            color: #333;
+        }
+        .fc .fc-daygrid-day.fc-day-today { /* Bugünün arka planı */
+             background-color: rgba(0, 123, 255, 0.1); /* Hafif mavi */
+        }
+        .fc-event { /* Takvimdeki randevu eventleri */
+            cursor: pointer; /* Üzerine gelince işaretçi */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="panel-header">
+            <h1>Yönetim Paneli</h1>
+            <button id="logoutBtn" class="danger">Çıkış Yap</button>
+        </div>
+
+        <!-- Günlük Randevular Bölümü -->
+        <div id="gunlukRandevularContainer">
+            <h2 id="gunlukRandevuBaslik">Bugünün Randevuları (<span id="bugunTarih"></span>)</h2>
+            <div id="randevuListesiLoading" class="loading-indicator">Randevular yükleniyor...</div>
+            <table id="randevuTablosu" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>Saat</th>
+                        <th>Ad</th>
+                        <th>Telefon</th>
+                        <th>Hizmet</th>
+                        <!-- İleride eklenebilecekler:<th>Durum</th><th>İşlemler</th> -->
+                    </tr>
+                </thead>
+                <tbody id="randevuListesi">
+                    <!-- Randevular JavaScript ile buraya eklenecek -->
+                </tbody>
+            </table>
+            <p id="randevuYokMesaji" style="display: none;">Bugün için planlanmış randevu bulunmamaktadır.</p>
+        </div>
+
+        <!-- Takvim Bölümü -->
+        <div id="takvimContainer">
+            <h2>Randevu Takvimi</h2>
+            <div id='calendar'></div>
+        </div>
+
+    </div> <!-- /container -->
+
+    <!-- Firebase SDK'ları -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+
+    <!-- Takvim Kütüphanesi (FullCalendar örneği) -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/locales/tr.js'></script> <!-- Türkçe dil desteği -->
+
+
+    <!-- Firebase yapılandırma ve panel mantığı -->
+    <script src="js/config.js"></script>
+    <script src="js/panel.js"></script>
+
+</body>
+</html>
