@@ -1,0 +1,19 @@
+{
+  "name": "berber-randevu",
+  "version": "1.0.0",
+  "description": "Berber Randevu Sistemi",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "berber",
+    "randevu",
+    "sistem"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+} 
